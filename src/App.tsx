@@ -1,4 +1,4 @@
-import Home from './pages/Home';
+import { Home, Login } from './pages/';
 import Header from './components/Header';
 
 import './App.module.css';
