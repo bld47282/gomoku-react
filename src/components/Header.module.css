@@ -8,10 +8,10 @@
     text-align: center;
 }
 
-.heading {
-    color: white;
-}
-
-.button {
-    color: black;
-}
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: space-between;
+    margin: auto;
+  }
