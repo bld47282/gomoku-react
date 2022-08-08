@@ -11,8 +11,15 @@ export default function Header() {
     if (user) {
       return (
         <>
-          <button className={style.action} onClick={() => navigate('history')}>History</button>
-          <button className={style.action} onClick={() => logout()}>Logout</button>
+          <button className={style.action} onClick={() => navigate('history')}>
+            History
+          </button>
+          <button className={style.action} onClick={() => {
+            logout()
+            navigate('home')
+          }}>
+            Logout
+          </button>
         </>
       )
     } else {
