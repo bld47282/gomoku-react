@@ -1,5 +1,6 @@
-import { Home } from './pages/';
-import Header from './components/Header';
+import { Routes, Route} from 'react-router-dom'
+import { Home, Login, Signup, Game, History, Log } from './pages/';
+import { Header } from './components/';
 
 import './App.module.css';
 
@@ -8,7 +9,15 @@ function App() {
     <>
       <Header />
       <main className='main'>
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/game" element={<Game />} />
+          <Route path="/games" element={<History />} />
+          <Route path="/game-log/:id" element={<Log />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
       </main>
     </>
   )
