@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button, Input, Message } from '../components'
 import users from "../data/users.json"
 
@@ -19,6 +20,8 @@ export default function Login() {
       console.log('logged in')
     }
   }
+
+  const navigate = useNavigate()
 
   return (
     <form className={style.container} 
@@ -50,6 +53,7 @@ export default function Login() {
         }}
       />
       <Button type="submit">Login</Button>
+      <Button type="button" onClick={() => navigate("/signup")}>Sign Up</Button>
     </form>
   )
 }
