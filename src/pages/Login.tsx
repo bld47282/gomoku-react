@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Input, Message } from '../components'
+import { UserContext } from '../context'
 import users from "../data/users.json"
 
 import style from './Login.module.css'
 
 export default function Login() {
+  const { login } = useContext(UserContext)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [isCredentualInvalid, setisCredentualInvalid] = useState(false)
+  const navigate = useNavigate()
 
   const handleLogin = () => {
     const user = users.find(
@@ -17,11 +20,10 @@ export default function Login() {
     if (!user) {
       setisCredentualInvalid(true)
     } else {
-      console.log('logged in')
+      login(username)
+      navigate('/')
     }
   }
-
-  const navigate = useNavigate()
 
   return (
     <form className={style.container} 
