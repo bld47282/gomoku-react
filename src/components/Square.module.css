@@ -1,0 +1,21 @@
+.square {
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.square.black {
+    border-radius: 50%;
+    background-color: black;
+}
+
+.square.white {
+    border-radius: 50%;
+    background-color: white;
+}
+
+.square:hover {
+    background-color: #183642;
+}
