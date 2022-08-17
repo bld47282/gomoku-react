@@ -1,7 +1,9 @@
 import style from "./Square.module.css"
+import { SQUARE_STATUS } from "../constants/index"
 
 type SquareProps = {
-    id: number
+    state: SQUARE_STATUS
+    turn: number | null
 }
 
 export default function Square(props: SquareProps) {
