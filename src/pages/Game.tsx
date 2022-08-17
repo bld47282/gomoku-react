@@ -1,8 +1,4 @@
-import { Square } from "../types"
-
-export default function Game() {
-  const Board = Array<Square>
-  
+export default function Game() {  
   return (
     <div>Game</div>
   )
