@@ -3,6 +3,7 @@ import { User } from '../types'
 
 type UserContextType = {
     user?: User
+    gameSize?: number
     login: (username: string) => void
     logout: () => void
 }
