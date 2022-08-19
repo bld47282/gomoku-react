@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     width: 90%;
     max-width: 800px;
@@ -8,5 +8,6 @@
 }
 
 .grid {
-    display:grid
+    display: inline-grid;
+    justify-content: center;
 }
