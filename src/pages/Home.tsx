@@ -9,13 +9,15 @@ import { UserContext } from '../context'
 export default function Home() {
   const navigate = useNavigate()
   const user = useContext(UserContext)
+  const handleChange = (e: any) => {
+    user.gameSize = e.target.value
+  }
 
   return (
     <div className={style.container}>
-      <NumberDropdown start={5} end={19}></NumberDropdown>
+      <NumberDropdown start={5} end={19} onChange={handleChange}></NumberDropdown>
       <Button onClick={() => {
         navigate("/game")
-        user.gameSize = 19
       }}>Start</Button>
     </div>
   )
