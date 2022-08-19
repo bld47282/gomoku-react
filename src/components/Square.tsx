@@ -17,6 +17,10 @@ const getClassNames = (status: SQUARE_STATUS) => {
 
 export default function Square(props: SquareProps) {
   return (
-    <div className={getClassNames(props.state)}>{props.turn}</div>
+    <div 
+      className={getClassNames(props.state)}
+      onClick={() => props.onClick(props.id, props.state)}>
+        {props.turn}
+    </div>
   )
 }
