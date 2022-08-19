@@ -8,7 +8,6 @@ type UserProviderProps = {
 
 export default function UserProvider({ children }: UserProviderProps ) {
     const [user, setUser] = useState<User | undefined>(undefined)
-
     const login = (username: string) => setUser({username})
     const logout = () => setUser(undefined)
 
