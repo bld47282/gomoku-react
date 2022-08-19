@@ -15,16 +15,23 @@
 
 .square.black {
     border-radius: 50%;
-    color: #fff;
+    color: #000;
     background-color: #000;
 }
 
 .square.white {
     border-radius: 50%;
-    color: #000;
+    color: #fff;
     background-color: #fff;
 }
 
-.square:hover {
+.square.black.history {
+    color: #fff;
+}
+
+.square.white.history {
+    color: #000;
+}
+.square.empty:hover {
     background-color: #183642;
 }
