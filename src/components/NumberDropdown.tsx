@@ -12,8 +12,8 @@ export default function NumberDropdown({start, end, onChange} : NumberDropdownPr
 
   return (
     <select onChange={onChange}>
-      <option value={19} hidden>Board size:</option>
-      {numbers.map((x) => <option value={x}>{x}</option>)}
+      <option value={19} key={0} hidden>Board size:</option>
+      {numbers.map((x) => <option key ={x} value={x}>{x}</option>)}
     </select>
   )
 }
