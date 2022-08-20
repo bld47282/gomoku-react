@@ -16,8 +16,7 @@ export default function Game() {
     const updatedSquare: SquareType = {
       id: id,
       state: (game.gameState === GAME_STATUS.BLACK) ? SQUARE_STATUS.BLACK : SQUARE_STATUS.WHITE,
-      turn: game.turn,
-      onClick: updateBoard
+      turn: game.turn
     }
 
     setGame( {
@@ -34,8 +33,7 @@ export default function Game() {
     const newSquare: SquareType = {
       id: i,
       state: SQUARE_STATUS.EMPTY,
-      turn: null,
-      onClick: updateBoard
+      turn: null
     }
     newBoard.push(newSquare)
   }
