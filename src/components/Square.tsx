@@ -19,7 +19,7 @@ export default function Square(props: SquareProps) {
   return (
     <div 
       className={getClassNames(props.state)}
-      onClick={() => props.onClick(props.id, props.state)}>
+      onClick={(e) => (props.state === SQUARE_STATUS.EMPTY) ? (props.onClick(props.id)) : e.preventDefault()}>
     </div>
   )
 }
