@@ -20,7 +20,6 @@ export default function Square(props: SquareProps) {
     <div 
       className={getClassNames(props.state)}
       onClick={() => props.onClick(props.id, props.state)}>
-        {props.turn}
     </div>
   )
 }
