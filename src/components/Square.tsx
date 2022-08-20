@@ -1,6 +1,12 @@
 import style from "./Square.module.css"
 import { SQUARE_STATUS } from "../constants/index"
-import { Square as SquareProps } from '../types'
+
+type SquareProps = {
+  id: number
+  state: SQUARE_STATUS
+  turn: number | null
+  onClick: (id: number) => void
+}
 
 const getClassNames = (status: SQUARE_STATUS) => {
   switch(status) {
