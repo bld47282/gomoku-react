@@ -11,13 +11,8 @@ export default function Game() {
   const { user } = useContext(UserContext)
   const { size } = useParams()
   const parsedSize = size? parseInt(size) : 19
-  const [game, setGame] = useState<GameType>( {gameSize: parsedSize, gameState: GAME_STATUS.BLACK, turn: 1} )
-  const [board, setBoard] = useState<SquareType[] | null>(null)
 
-  if (!user) return <Navigate to='/login' />
-
-  const updateBoard = (id: number, state: SQUARE_STATUS) => {
-    if (!board || state !== SQUARE_STATUS.EMPTY) return
+  const updateBoard = (id: number) => {
     const updatedSquare: SquareType = {
       id: id,
       state: (game.gameState === GAME_STATUS.BLACK) ? SQUARE_STATUS.BLACK : SQUARE_STATUS.WHITE,
@@ -25,27 +20,34 @@ export default function Game() {
       onClick: updateBoard
     }
 
-    setGame({
+    setGame( {
       gameSize: game.gameSize,
       gameState: (game.gameState === GAME_STATUS.BLACK) ? GAME_STATUS.WHITE : GAME_STATUS.BLACK,
-      turn: game.turn + 1
-    })
-    setBoard(board?.map((x) => ((x.id === id) ? updatedSquare : x)))
+      turn: game.turn + 1,
+      board: game.board.map((x) => ((x.id === id) ? updatedSquare : x))
+    } )
   }
 
-  if (!board) {
-    const newBoard: SquareType[] = []
-    for (let i = 0; i < (game.gameSize * game.gameSize); i++) {
-      const newSquare: SquareType = {
-        id: i,
-        state: SQUARE_STATUS.EMPTY,
-        turn: null,
-        onClick: updateBoard
-      }
-      newBoard.push(newSquare)
+  const newBoard: SquareType[] = []
+  
+  for (let i = 0; i < (parsedSize * parsedSize); i++) {
+    const newSquare: SquareType = {
+      id: i,
+      state: SQUARE_STATUS.EMPTY,
+      turn: null,
+      onClick: updateBoard
     }
-    setBoard(newBoard)
+    newBoard.push(newSquare)
   }
+
+  const [game, setGame] = useState<GameType>( {
+    gameSize: parsedSize, 
+    gameState: GAME_STATUS.BLACK, 
+    turn: 1, 
+    board: newBoard
+  } )
+
+  if (!user) return <Navigate to='/login' />
 
   return (
     <div className={style.container}>
@@ -53,7 +55,7 @@ export default function Game() {
         className={style.grid}
         style={{ gridTemplateColumns: `repeat(${game.gameSize}, 1fr)` }}
       >
-        {board?.map((x) => (
+        {game.board.map((x) => (
           <Square state={x.state} turn={x.turn} key={x.id} id={x.id} onClick={updateBoard}></Square>
         ))}
       </div>
