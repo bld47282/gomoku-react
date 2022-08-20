@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/game" element={<Game />} />
+          <Route path="/game:size" element={<Game />} />
           <Route path="/history" element={<History />} />
           <Route path="/game-log/:id" element={<Log />} />
           <Route path="*" element={<Navigate to="/" replace />} />
