@@ -1,5 +1,5 @@
 import { Button, NumberDropdown } from '../components'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 
