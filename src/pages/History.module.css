@@ -1,8 +1,25 @@
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     width: 90%;
     max-width: 800px;
+    margin: 2rem auto;
+}
+
+.cardsContainer {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.card {
+    display: flex;
+    border: 2px black;
+    justify-content: space-between;
     margin: 2rem auto;
 }
