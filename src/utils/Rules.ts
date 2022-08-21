@@ -88,5 +88,5 @@ export function hasWon(lastMove: Square, game: Game): boolean {
 }
 
 export function isDraw(lastMove: Square, game: Game): boolean {
-    return (game.turn === (game.gameSize * game.gameSize)) && (game.gameState !== GAME_STATUS.BLACK) && (game.gameState !== GAME_STATUS.WHITE) ? true : false
+    return (game.turn === (game.gameSize * game.gameSize)) && ((game.gameState === GAME_STATUS.BLACK) || (game.gameState === GAME_STATUS.WHITE)) ? true : false
 }
