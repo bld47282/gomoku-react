@@ -22,11 +22,13 @@ const getClassNames = (status: SQUARE_STATUS) => {
 
 export default function Square(props: HistorySquareProps) {
     return (
-        <div
-            className={getClassNames(props.state)}
-            onClick={(e) => (e.preventDefault())}
-        >
-            {props.turn}
+        <div className={style.boardSquare}>
+            <div
+                className={getClassNames(props.state)}
+                onClick={(e) => (e.preventDefault())}
+            >
+                {props.turn}
+            </div>
         </div>
     )
 }
