@@ -8,6 +8,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, run:
 
-### `yarn start start`
+### `yarn start`
 
 And navigate to [http://localhost:3000](http://localhost:3000).
