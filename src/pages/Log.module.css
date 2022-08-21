@@ -10,4 +10,6 @@
 .grid {
     display: inline-grid;
     justify-content: center;
+    background-color: beige;
+    gap: 1px;
 }
