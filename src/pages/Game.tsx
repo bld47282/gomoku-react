@@ -6,7 +6,7 @@ import { UserContext } from "../context"
 import { Game as GameType, Square as SquareType } from "../types"
 import { Button, Square } from "../components"
 import { Navigate } from "react-router-dom"
-import { hasWon, isDraw } from "../utils"
+import { gameStateToString, hasWon, isDraw } from "../utils"
 import { useLocalStorage } from "../hooks"
 
 export default function Game() {
@@ -70,7 +70,7 @@ export default function Game() {
           ))}
         </div>
       </div>
-      <div className={style.container}>{game.gameState}</div>
+      <div className={style.container}>{gameStateToString(game.gameState)}</div>
       <div className={style.container}>
         <Button onClick={() => {
           setGame({
