@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { Button } from "../components"
-import { GAME_STATUS } from "../constants"
 import { UserContext } from "../context"
 import { useLocalStorage } from "../hooks"
 import { Game } from "../types"
