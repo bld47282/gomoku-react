@@ -19,7 +19,10 @@
 
 .card {
     display: flex;
-    border: 2px black;
+    border-radius: 10px;
+    background-color: beige;
+    border: 2px black solid;
     justify-content: space-between;
     margin: 2rem auto;
+    padding: 1rem;
 }
