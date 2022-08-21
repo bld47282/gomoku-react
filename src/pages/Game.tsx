@@ -81,7 +81,7 @@ export default function Game() {
           })
         }}>Restart</Button>
         <Button onClick={() => {
-          saveGame([...savedGames, game])
+          if (game.gameState !== GAME_STATUS.BLACK && game.gameState !== GAME_STATUS.WHITE) saveGame([...savedGames, game])
           navigate("/home")
         }}>Leave</Button>
       </div>
