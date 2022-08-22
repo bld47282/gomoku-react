@@ -19,7 +19,7 @@ export default function History() {
         <div className={style.cardsContainer}>
           {savedGames.map((x, index) => (
             <div className={style.card}>
-              Game #{index}: {gameStateToString(x.gameState)}
+              Game #{index + 1}: {gameStateToString(x.gameState)}
               <Button key={index} onClick={() => (
                 navigate("/log" + index)
               )}>View</Button>
