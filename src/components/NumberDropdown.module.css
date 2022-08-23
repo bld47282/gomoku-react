@@ -1,8 +1,8 @@
 .select {
     padding: 1rem;
     background-color: white;
-    border: 1px blue solid;
-    color: black;
+    border: 1px #2A2B2DFF;
+    color: #2A2B2DFF;
     border-radius: 10px;
     font-size: large;
 }

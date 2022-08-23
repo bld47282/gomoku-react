@@ -1,7 +1,7 @@
 .button {
-    background-color: blue;
-    color: white;
-    border: none;
+    background-color: #D9514EFF;
+    color: #2A2B2DFF;
+    border: 1px #2A2B2DFF solid;
     padding: 1rem;
     border-radius: 10px;
     font-weight: bold;

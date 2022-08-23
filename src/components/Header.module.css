@@ -1,8 +1,8 @@
 .header {
     font-size: 2.5rem;
     padding: 1rem;
-    background-color: blue;
-    color: white;
+    background-color: #D9514EFF;
+    color: #2A2B2DFF;
     font-weight: bolder;
     text-transform: uppercase;
     text-align: center;
@@ -24,7 +24,7 @@
 .action {
     background-color: transparent;
     border: none;
-    color: #FFFFFF;
+    color: #2A2B2DFF;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
