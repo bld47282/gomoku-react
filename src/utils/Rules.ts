@@ -27,7 +27,8 @@ export function hasWon(lastMove: Square, game: Game): boolean {
     // Condition two - left-right
     var c2: number = 1
     for (let i = 1; i < game.gameSize; i++) {
-        if (game.board[lastMove.id + i]?.state === lastMove.state) {
+        if ((game.board[lastMove.id + i]?.state === lastMove.state) 
+            && ((lastMove.id % game.gameSize) < (i % game.gameSize))) {
             c2++
         } else {
             break
@@ -35,7 +36,8 @@ export function hasWon(lastMove: Square, game: Game): boolean {
     }
 
     for (let i = 1; i < game.gameSize; i++) {
-        if (game.board[lastMove.id - i]?.state === lastMove.state) {
+        if ((game.board[lastMove.id - i]?.state === lastMove.state)
+            && ((lastMove.id % game.gameSize) > (i % game.gameSize))) {
             c2++
         } else {
             break
@@ -47,7 +49,8 @@ export function hasWon(lastMove: Square, game: Game): boolean {
     // Condition three - tr-bl
     var c3: number = 1
     for (let i = 1; i < game.gameSize; i++) {
-        if (game.board[lastMove.id + (game.gameSize * i) + i]?.state === lastMove.state) {
+        if ((game.board[lastMove.id + (game.gameSize * i) + i]?.state === lastMove.state)
+            && ((lastMove.id % game.gameSize) < (i % game.gameSize))) { 
             c3++
         } else {
             break
@@ -55,7 +58,8 @@ export function hasWon(lastMove: Square, game: Game): boolean {
     }
 
     for (let i = 1; i < game.gameSize; i++) {
-        if (game.board[lastMove.id - (game.gameSize * i) - i]?.state === lastMove.state) {
+        if ((game.board[lastMove.id - (game.gameSize * i) - i]?.state === lastMove.state)
+            && ((lastMove.id % game.gameSize) > (i % game.gameSize))) {
             c3++
         } else {
             break
@@ -67,7 +71,8 @@ export function hasWon(lastMove: Square, game: Game): boolean {
     // Condition four bl-tr
     var c4: number = 1
     for (let i = 1; i < game.gameSize; i++) {
-        if (game.board[lastMove.id + (game.gameSize * i) + i]?.state === lastMove.state) {
+        if ((game.board[lastMove.id + (game.gameSize * i) - i]?.state === lastMove.state)
+            && ((lastMove.id % game.gameSize) > (i % game.gameSize))) {
             c4++
         } else {
             break
@@ -75,7 +80,8 @@ export function hasWon(lastMove: Square, game: Game): boolean {
     }
 
     for (let i = 1; i < game.gameSize; i++) {
-        if (game.board[lastMove.id - (game.gameSize * i) - i]?.state === lastMove.state) {
+        if ((game.board[lastMove.id - (game.gameSize * i) + i]?.state === lastMove.state)
+            && ((lastMove.id % game.gameSize) < (i % game.gameSize))) { 
             c4++
         } else {
             break
